@@ -1,4 +1,3 @@
-source ~/config/.bash_aliases
 export DYLD_FORCE_FLAT_NAMESPACE=1 
 # Set up prompt
 
