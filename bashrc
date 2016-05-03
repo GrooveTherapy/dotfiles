@@ -1,6 +1,8 @@
-export DYLD_FORCE_FLAT_NAMESPACE=1 
-# Set up prompt
+source ~/.bash_aliases
 
+export DYLD_FORCE_FLAT_NAMESPACE=1 
+
+# Set up prompt
 # Let's get fancy and make a different special prompt for git directories  
 RESET="\[\017\]"
 NORMAL="\[\033[0m\]"
