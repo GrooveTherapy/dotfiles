@@ -18,7 +18,7 @@ GITMODIFIEDCOUNT=$(git status 2>&1 | grep modified | wc -l)
 GITPROMPT="${WHITE}| GIT | "
 SHOWGIT="if [[ -z \$(git branch 2>&1 | grep fatal) ]]; then echo \"${GITPROMPT}\"; else echo -n ''; fi"
 
-export PS1="${LTGREEN}\u@\h \`${SELECT}\` ${BOLD}${CYAN}\w \`${SHOWGIT}\`${NORMAL}${BOLD}>${NORMAL} "
+export PS1="\`${SELECT}\` ${BOLD}${CYAN}\w \`${SHOWGIT}\`${NORMAL}${BOLD}>${NORMAL} "
 
 # Show colors on ls
 export CLICOLOR=1
