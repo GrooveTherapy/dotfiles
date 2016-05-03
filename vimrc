@@ -58,6 +58,11 @@ nnoremap <C-k> 3k<CR>						" CTRL-K jump up a handful lines
 nnoremap <C-D> :sh<CR>						" Drop into (and out of!) the shell
 set backspace=indent,eol,start  				" Modern backspace behaviour
 
+" Folding settings
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za						" Space bar will open/close folds
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
