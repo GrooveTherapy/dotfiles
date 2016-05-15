@@ -23,7 +23,7 @@ set incsearch					" Search as characters are entered
 " nnoremap <leader><space> :nohlsearch<CR> 	" Remove search highlighting
 
 set laststatus=2						" Show status line at the bottom of the screen
-let g:airline_theme='badwolf'					" Start airline with this this theme
+let g:airline_theme='wombat'					" Start airline with this this theme
 let g:airline_powerline_fonts = 1				" Use powerline fonts
 let g:airline#extensions#tabline#enabled = 1			" Show tabline at the top of the screen
 let NERDTreeShowHidden=1					" Show hidden files in nerd tree
@@ -79,6 +79,7 @@ Plugin 'scrooloose/nerdtree'			" Interactive file finder!
 " Plugin 'kien/ctrlp'				" Fuzzy file finder
 Plugin 'Valloric/YouCompleteMe'			" Code completion.  Don't forget to install the compiled component 
 Plugin 'bling/vim-airline'			" Status and buffer line 
+Plugin 'vim-airline/vim-airline-themes'		" Change airline themes
 Plugin 'scrooloose/syntastic'			" Syntax checker
 " Plugin 'tpope/vim-surround'                  " Changing surround scoping
 
