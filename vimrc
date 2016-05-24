@@ -57,6 +57,7 @@ nnoremap ct :bd<CR>						" Close this
 nnoremap <C-j> 3j<CR>						" CTRL-J jump down a handful of lines
 nnoremap <C-k> 3k<CR>						" CTRL-K jump up a handful lines
 nnoremap <C-D> :sh<CR>						" Drop into (and out of!) the shell
+noremap <F3> :Autoformat<CR>					" Autoformat code...
 set backspace=indent,eol,start  				" Modern backspace behaviour
 
 " Folding settings
@@ -81,6 +82,7 @@ Plugin 'Valloric/YouCompleteMe'			" Code completion.  Don't forget to install th
 Plugin 'bling/vim-airline'			" Status and buffer line 
 Plugin 'vim-airline/vim-airline-themes'		" Change airline themes
 Plugin 'scrooloose/syntastic'			" Syntax checker
+Plugin 'Chiel92/vim-autoformat'			" autoformatter
 " Plugin 'tpope/vim-surround'                  " Changing surround scoping
 
 " " The following are examples of different formats supported.
