@@ -17,6 +17,7 @@ set cursorline		" Highlight the row the cursor is one
 filetype indent on	" Load file type specific indenting rules 
 set showmatch 		" Show corresponding end braces
 " set showcmd 		" Show info about commands running
+set clipboard=unnamed	" Use the system clipboard
 
 set hlsearch					" Highlight search matches
 set incsearch					" Search as characters are entered
