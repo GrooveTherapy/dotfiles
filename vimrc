@@ -53,7 +53,6 @@ nnoremap <C-H> :bprevious!<CR>					" CTRL-L go to next buffer
 nnoremap sa :wall<CR>						" Save all
 nnoremap st :w<CR>						" Save this
 nnoremap ca :qall<CR>						" Close all
-nnoremap ct :bd<CR>						" Close this
 nnoremap <C-j> 3j<CR>						" CTRL-J jump down a handful of lines
 nnoremap <C-k> 3k<CR>						" CTRL-K jump up a handful lines
 nnoremap <C-D> :sh<CR>						" Drop into (and out of!) the shell
