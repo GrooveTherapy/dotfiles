@@ -1,5 +1,6 @@
 source ~/.bash_aliases
 
+export GOROOT=/usr/local/go
 export DYLD_FORCE_FLAT_NAMESPACE=1 
 
 # Set up prompt
