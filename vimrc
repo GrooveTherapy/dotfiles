@@ -43,6 +43,9 @@ let g:syntastic_check_on_wq = 0
 let g:ycm_add_preview_to_completeopt = 0			" This line and below disable the preview window from YCM
 set completeopt-=preview
 
+" vim-go Settings
+let g:go_fmt_command = "goimports"
+
 set spell spelllang=en_us					" Set spell checking dictionary to english
 set spell							" Turn on spell checking (z= gives suggestions on misspelling.  zg marks bad as good.  zw marks good and bad)
 
@@ -56,7 +59,6 @@ nnoremap st :w<CR>						" Save this
 nnoremap ca :qall<CR>						" Close all
 nnoremap <C-j> 3j<CR>						" CTRL-J jump down a handful of lines
 nnoremap <C-k> 3k<CR>						" CTRL-K jump up a handful lines
-nnoremap <C-D> :sh<CR>						" Drop into (and out of!) the shell
 noremap <F3> :Autoformat<CR>					" Autoformat code...
 set backspace=indent,eol,start  				" Modern backspace behaviour
 
