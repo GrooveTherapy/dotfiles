@@ -4,6 +4,8 @@ filetype plugin indent on
 " Syntax highlighting rules
 syntax enable						" show syntax highlighting
 autocmd BufNewFile,BufRead *.xaml set syntax=xml 	" Manually set syntax hightlight rules for xaml files to xml
+autocmd BufNewFile,BufRead *.yaml set filetype=ansible 	" Manually set syntax hightlight rules for yml files to ansible
+autocmd BufNewFile,BufRead *.tf set filetype=terraform 	" Manually set syntax hightlight rules for tf files to terraform
 
 set number 		" Show numbers on the LHS of the editor
 set t_Co=256		" Set 256 Color Mode (make sure you are using a terminal that supports this...)
@@ -86,7 +88,8 @@ Plugin 'vim-airline/vim-airline-themes'		" Change airline themes
 Plugin 'scrooloose/syntastic'			" Syntax checker
 Plugin 'Chiel92/vim-autoformat'			" autoformatter
 " Plugin 'tpope/vim-surround'                  " Changing surround scoping
-
+Plugin 'pearofducks/ansible-vim'		" Ansible support
+Plugin 'hashivim/vim-terraform'			" Terraform support
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
