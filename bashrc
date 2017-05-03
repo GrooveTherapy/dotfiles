@@ -1,4 +1,5 @@
 source ~/.bash_aliases
+source ~/.ssh/config
 
 export GOROOT=/usr/local/go
 # export DYLD_FORCE_FLAT_NAMESPACE=1 

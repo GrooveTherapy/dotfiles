@@ -11,3 +11,5 @@ alias gd='git diff'
 
 # Directory Listing Helpers
 alias la='ls -al'
+
+alias ssh-key-make='ssh-keygen -t rsa -b 2048 -C'
