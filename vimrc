@@ -90,6 +90,7 @@ Plugin 'Chiel92/vim-autoformat'			" autoformatter
 " Plugin 'tpope/vim-surround'                  " Changing surround scoping
 Plugin 'pearofducks/ansible-vim'		" Ansible support
 Plugin 'hashivim/vim-terraform'			" Terraform support
+Plugin 'jiangmiao/auto-pairs'			" Pair up brackets!
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
