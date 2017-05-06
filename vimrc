@@ -87,7 +87,7 @@ Plugin 'bling/vim-airline'			" Status and buffer line
 Plugin 'vim-airline/vim-airline-themes'		" Change airline themes
 Plugin 'scrooloose/syntastic'			" Syntax checker
 Plugin 'Chiel92/vim-autoformat'			" autoformatter
-" Plugin 'tpope/vim-surround'                  " Changing surround scoping
+Plugin 'tpope/vim-surround'                  " Changing surround scoping
 Plugin 'pearofducks/ansible-vim'		" Ansible support
 Plugin 'hashivim/vim-terraform'			" Terraform support
 Plugin 'jiangmiao/auto-pairs'			" Pair up brackets!
