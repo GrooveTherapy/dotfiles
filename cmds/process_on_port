@@ -1,9 +1,8 @@
 #/bin/sh
 
-input=${1}
-
-if [ -z ${input}  ]; then
+if [ -z "$1"  ]; then
     echo "Please provide a port"
+    exit 1
 fi
 
-lsof -i:${input}
+lsof -i:$1
