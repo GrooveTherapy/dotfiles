@@ -13,3 +13,4 @@ alias gd='git diff'
 alias la='ls -al'
 
 alias ssh-key-make='ssh-keygen -t rsa -b 2048 -C'
+alias scribble='/Users/kbrockman/code/personal/scribble/scribble'

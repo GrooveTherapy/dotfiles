@@ -1,0 +1,9 @@
+#/bin/sh
+
+input=${1}
+
+if [ -z ${input}  ]; then
+    echo "Please provide a port"
+fi
+
+lsof -i:${input}

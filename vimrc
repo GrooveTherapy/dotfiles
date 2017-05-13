@@ -5,6 +5,7 @@ filetype plugin indent on
 syntax enable						" show syntax highlighting
 autocmd BufNewFile,BufRead *.xaml set syntax=xml 	" Manually set syntax hightlight rules for xaml files to xml
 autocmd BufNewFile,BufRead *.yaml set filetype=ansible 	" Manually set syntax hightlight rules for yml files to ansible
+autocmd BufNewFile,BufRead *.yml set filetype=ansible 	" Manually set syntax hightlight rules for yml files to ansible
 autocmd BufNewFile,BufRead *.tf set filetype=terraform 	" Manually set syntax hightlight rules for tf files to terraform
 
 set number 		" Show numbers on the LHS of the editor
