@@ -7,6 +7,8 @@ autocmd BufNewFile,BufRead *.xaml set syntax=xml 	" Manually set syntax hightlig
 autocmd BufNewFile,BufRead *.yaml set filetype=ansible 	" Manually set syntax hightlight rules for yml files to ansible
 autocmd BufNewFile,BufRead *.yml set filetype=ansible 	" Manually set syntax hightlight rules for yml files to ansible
 autocmd BufNewFile,BufRead *.tf set filetype=terraform 	" Manually set syntax hightlight rules for tf files to terraform
+set paste              					" no more stupid pasting behaviour
+"
 
 set number 		" Show numbers on the LHS of the editor
 set t_Co=256		" Set 256 Color Mode (make sure you are using a terminal that supports this...)
