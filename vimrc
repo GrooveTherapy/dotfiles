@@ -27,6 +27,7 @@ set clipboard=unnamed	" Use the system clipboard
 set hlsearch					" Highlight search matches
 set incsearch					" Search as characters are entered
 " nnoremap <leader><space> :nohlsearch<CR> 	" Remove search highlighting
+set directory=$HOME/.vim/swapfiles/		" Store swap files somewhere central
 
 set laststatus=2						" Show status line at the bottom of the screen
 let g:airline_theme='wombat'					" Start airline with this this theme
