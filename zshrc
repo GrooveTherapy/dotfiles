@@ -55,7 +55,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker tmux npm go golang pip macports nmap)
+plugins=(git docker tmux npm go golang pip macports nmap virtualenvwrapper zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
