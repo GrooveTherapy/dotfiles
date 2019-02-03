@@ -1,5 +1,11 @@
 set nocompatible 
 filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 " Syntax highlighting rules
 syntax enable						" show syntax highlighting
@@ -36,14 +42,14 @@ let g:airline#extensions#tabline#enabled = 1			" Show tabline at the top of the 
 let NERDTreeShowHidden=1					" Show hidden files in nerd tree
 
 " Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0				" Set to false - this seems to improve performance quite a bit
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_javascript_checkers = ['jshint']
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0				" Set to false - this seems to improve performance quite a bit
+" let g:syntastic_check_on_wq = 0
 
 " YCM Settings
 let g:ycm_add_preview_to_completeopt = 0			" This line and below disable the preview window from YCM
@@ -113,7 +119,6 @@ Plugin 'jiangmiao/auto-pairs'			" Pair up brackets!
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 " " To ignore plugin indent changes, instead use:
 " "filetype plugin on
 " "

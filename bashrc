@@ -1,7 +1,7 @@
-source ~/.bash_aliases
+# echo '.bashrc loaded'
 
-export GOROOT=/usr/local/go
-# export DYLD_FORCE_FLAT_NAMESPACE=1 
+source ~/.bash_aliases
+source ~/.profile
 
 # Set up prompt
 # Let's get fancy and make a different special prompt for git directories  
