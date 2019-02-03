@@ -1,6 +1,6 @@
 # echo '.bashrc loaded'
 
-source ~/.bash_aliases
+source ~/.aliases
 source ~/.profile
 
 # Set up prompt

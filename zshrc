@@ -1,7 +1,7 @@
 # echo '.zshrc loaded'
 
 # Use root profile for common stuff 
-source ~/.bash_aliases
+source ~/.aliases
 source ~/.profile
 
 # Path to your oh-my-zsh installation.
