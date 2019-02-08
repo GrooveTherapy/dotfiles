@@ -1,4 +1,4 @@
-# echo '.bash_aliases loaded'
+# echo '.aliases loaded'
 
 # Naviation Helpers
 alias ~='cd ~'
