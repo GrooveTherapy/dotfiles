@@ -51,10 +51,6 @@ let NERDTreeShowHidden=1					" Show hidden files in nerd tree
 " let g:syntastic_check_on_open = 0				" Set to false - this seems to improve performance quite a bit
 " let g:syntastic_check_on_wq = 0
 
-" YCM Settings
-let g:ycm_add_preview_to_completeopt = 0			" This line and below disable the preview window from YCM
-set completeopt-=preview
-
 " vim-go Settings
 let g:go_fmt_command = "goimports"
 
@@ -88,11 +84,9 @@ call vundle#begin()
  " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'			" Vundle Vim package manager
 Plugin 'fatih/vim-go'				" Syntax highlighting for Go
-Plugin 'altercation/vim-colors-solarized' 	" Fancy color scheme (Doesn't work!)
 Plugin 'nsf/gocode', {'rtp': 'vim/'}		" Autocomplete Daemon for Go
 Plugin 'scrooloose/nerdtree'			" Interactive file finder!
 " Plugin 'kien/ctrlp'				" Fuzzy file finder
-Plugin 'Valloric/YouCompleteMe'			" Code completion.  Don't forget to install the compiled component 
 Plugin 'bling/vim-airline'			" Status and buffer line 
 Plugin 'vim-airline/vim-airline-themes'		" Change airline themes
 Plugin 'scrooloose/syntastic'			" Syntax checker
