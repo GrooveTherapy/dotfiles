@@ -22,3 +22,5 @@ alias ssh-key-make='ssh-keygen -t rsa -b 2048 -C'
 
 alias pip3.6=pip3
 alias python3=python3.6
+
+source ~/dotfiles/cmds/env-cd
