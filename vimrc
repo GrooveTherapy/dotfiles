@@ -77,21 +77,21 @@ nnoremap <space> za						" Space bar will open/close folds
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
+call vundle#begin()
  " alternatively, pass a path where Vundle should install plugins
  "call vundle#begin('~/some/path/here')
 
  " let Vundle manage Vundle, required
-" Plugin 'gmarik/Vundle.vim'			" Vundle Vim package manager
+Plugin 'gmarik/Vundle.vim'			" Vundle Vim package manager
 " Plugin 'fatih/vim-go'				" Syntax highlighting for Go
 " Plugin 'nsf/gocode', {'rtp': 'vim/'}		" Autocomplete Daemon for Go
-" Plugin 'scrooloose/nerdtree'			" Interactive file finder!
+Plugin 'scrooloose/nerdtree'			" Interactive file finder!
 " Plugin 'kien/ctrlp'				" Fuzzy file finder
-" Plugin 'bling/vim-airline'			" Status and buffer line 
-" Plugin 'vim-airline/vim-airline-themes'		" Change airline themes
+Plugin 'bling/vim-airline'			" Status and buffer line 
+Plugin 'vim-airline/vim-airline-themes'		" Change airline themes
 " Plugin 'scrooloose/syntastic'			" Syntax checker
 " Plugin 'Chiel92/vim-autoformat'			" autoformatter
-" Plugin 'tpope/vim-surround'                  " Changing surround scoping
+Plugin 'tpope/vim-surround'                  " Changing surround scoping
 " Plugin 'pearofducks/ansible-vim'		" Ansible support
 " Plugin 'hashivim/vim-terraform'			" Terraform support
 " Plugin 'jiangmiao/auto-pairs'			" Pair up brackets!
@@ -111,10 +111,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 "
-" " All of your Plugins must be added before the following line
-" call vundle#end()            " required
-" " To ignore plugin indent changes, instead use:
-" "filetype plugin on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+" To ignore plugin indent changes, instead use:
+filetype plugin on
 " "
 " " Brief help
 " " :PluginList       - lists configured plugins

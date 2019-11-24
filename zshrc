@@ -9,7 +9,7 @@ source ~/.profile
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    ssh-agent
+    # ssh-agent
     git 
     docker 
     docker-compose
@@ -18,8 +18,9 @@ plugins=(
     go 
     golang
     pip 
-    macports 
-    nmap
+	terraform
+	virtualenvwrapper
+	python
 )
 
 # Path to your oh-my-zsh installation.
@@ -108,3 +109,14 @@ source $ZSH/oh-my-zsh.sh
 # See https://stackoverflow.com/questions/32057760/is-it-possible-to-not-share-history-between-panes-windows-in-tmux-with-zsh
 setopt noincappendhistory
 setopt nosharehistory
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/mc mc
+
+# BUG: the if ... lines are added by google-cloud-sdk. They don't appear to modify my path properly, so im gonna do this manually
+# The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/kent/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kent/google-cloud-sdk/path.zsh.inc'; fi
+export PATH="$HOME/google-cloud-sdk/bin:$PATH"
+
+# The next line enables shell command completion for gcloud.
+# if [ -f '/Users/kent/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kent/google-cloud-sdk/completion.zsh.inc'; fi
