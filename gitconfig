@@ -1,4 +1,6 @@
-# This is Git's per-user configuration file.
+[core]
+excludesFile = ~/.gitignore_global
+
 [user]
 name = Kent Brockman
 email = brockman.ks@gmail.com

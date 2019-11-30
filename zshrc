@@ -2,7 +2,7 @@
 
 # Use root profile for common stuff 
 source ~/.aliases
-source ~/.profile
+export PATH=$PATH:~/dotfiles/cmds
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -116,7 +116,16 @@ complete -o nospace -C /usr/local/bin/mc mc
 # BUG: the if ... lines are added by google-cloud-sdk. They don't appear to modify my path properly, so im gonna do this manually
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/kent/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kent/google-cloud-sdk/path.zsh.inc'; fi
-export PATH="$HOME/google-cloud-sdk/bin:$PATH"
+# export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
 # The next line enables shell command completion for gcloud.
 # if [ -f '/Users/kent/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kent/google-cloud-sdk/completion.zsh.inc'; fi
+
+# override agnoster prompt with this cute thing from https://github.com/agnoster/agnoster-zsh-theme/issues/39#issuecomment-470603968
+prompt_context() {
+  # Custom (Random emoji)
+  emojis=("⚡️" "🔥" "💀" "👑" "😎" "🐸" "🐵" "🦄" "🌈" "🍻" "🚀" "💡" "🎉" "🔑" "🇹🇭" "🚦" "🌙" "💻" "💥")
+  RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
+  prompt_segment black default "${emojis[$RAND_EMOJI_N]}"
+  # prompt_segment black default ""
+}
