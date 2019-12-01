@@ -14,14 +14,13 @@ autocmd BufNewFile,BufRead *.yaml set filetype=ansible 	" Manually set syntax hi
 autocmd BufNewFile,BufRead *.yml set filetype=ansible 	" Manually set syntax hightlight rules for yml files to ansible
 autocmd BufNewFile,BufRead *.tf set filetype=terraform 	" Manually set syntax hightlight rules for tf files to terraform
 set paste              					" no more stupid pasting behaviour
-"
 
 set number 		" Show numbers on the LHS of the editor
 set t_Co=256		" Set 256 Color Mode (make sure you are using a terminal that supports this...)
 colorscheme lucius 	" Use lucius.vim colorscheme at ~/.vimrc/colors and using the LuciusLight theme (see: http://www.vim.org/scripts/script.php?script_id=2536)
 LuciusLight 		" This line specified which theme in the lucius colorscheme to use
 
-" set mouse=a		" Enable the mouse
+set mouse=a		" Enable the mouse
 
 set wildmenu		" In GUI mode, tab will suggest commands for you
 set cursorline		" Highlight the row the cursor is one
@@ -82,7 +81,7 @@ call vundle#begin()
  "call vundle#begin('~/some/path/here')
 
  " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'			" Vundle Vim package manager
+Plugin 'Vundle/Vundle.vim'			" Vundle Vim package manager
 " Plugin 'fatih/vim-go'				" Syntax highlighting for Go
 " Plugin 'nsf/gocode', {'rtp': 'vim/'}		" Autocomplete Daemon for Go
 Plugin 'scrooloose/nerdtree'			" Interactive file finder!
