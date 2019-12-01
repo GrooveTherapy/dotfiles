@@ -124,7 +124,7 @@ complete -o nospace -C /usr/local/bin/mc mc
 # override agnoster prompt with this cute thing from https://github.com/agnoster/agnoster-zsh-theme/issues/39#issuecomment-470603968
 prompt_context() {
   # Custom (Random emoji)
-  emojis=("⚡️" "🔥" "💀" "👑" "😎" "🐸" "🐵" "🦄" "🌈" "🍻" "🚀" "💡" "🎉" "🔑" "🇹🇭" "🚦" "🌙" "💻" "💥")
+  emojis=("⚡️" "🔥" "💀" "👑" "😎" "🐸" "🐵" "🦄" "🌈" "🍻" "🚀" "💡" "🎉" "🔑" "🇹🇭" "🚦" "🌙" "💻" "💥" "🦴" "💣" "🧲" )
   RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
   prompt_segment black default "${emojis[$RAND_EMOJI_N]}"
   # prompt_segment black default ""
