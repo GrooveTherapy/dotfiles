@@ -2,7 +2,7 @@
 
 # Use root profile for common stuff 
 source ~/.aliases
-export PATH=$PATH:~/dotfiles/cmds
+export PATH=$PATH:~/dotfiles/cmds:~/.local/bin
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
