@@ -11,13 +11,11 @@ alias ....='cd ../../../..'
 alias st='git status'
 alias gd='git diff'
 alias git-reset='git reset --hard && git clean -f'
+alias gitlog="git log --graph --pretty=format:'%cd - %Cred%h%Creset %Cgreen(%cr) - %C(bold blue)%an -%C(yellow)%d%Creset %s' --abbrev-commit --date=iso"
 
 # Directory Listing Helpers
 alias la='ls -al'
 alias lah='ls -alh'
-
-# git
-alias gitlog="git log --graph --pretty=format:'%cd - %Cred%h%Creset %Cgreen(%cr) - %C(bold blue)%an -%C(yellow)%d%Creset %s' --abbrev-commit --date=iso"
 
 # disk space
 alias diskusage='du -h -d 1 .'

@@ -2,22 +2,22 @@
 
 # Use root profile for common stuff 
 source ~/.aliases
-export PATH=$PATH:~/dotfiles/cmds:~/.local/bin
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# TODO: construct plugins list when programs are available in path
 plugins=(
-    # ssh-agent
-    git 
-    docker 
-    docker-compose
-    tmux 
-    npm 
-    go 
-    golang
-    pip 
+  # ssh-agent
+  git 
+  docker 
+  docker-compose
+  tmux 
+  npm 
+  go 
+  golang
+  pip 
 	terraform
 	virtualenvwrapper
 	python
@@ -34,7 +34,6 @@ export ZSH=$HOME/.oh-my-zsh
 # make this mod https://github.com/agnoster/agnoster-zsh-theme/issues/39
 # comment out guts of prompt_context to get rid of username@host part
 ZSH_THEME="agnoster"
-# ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -112,14 +111,6 @@ setopt nosharehistory
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/mc mc
-
-# BUG: the if ... lines are added by google-cloud-sdk. They don't appear to modify my path properly, so im gonna do this manually
-# The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/kent/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kent/google-cloud-sdk/path.zsh.inc'; fi
-# export PATH="$HOME/google-cloud-sdk/bin:$PATH"
-
-# The next line enables shell command completion for gcloud.
-# if [ -f '/Users/kent/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kent/google-cloud-sdk/completion.zsh.inc'; fi
 
 # override agnoster prompt with this cute thing from https://github.com/agnoster/agnoster-zsh-theme/issues/39#issuecomment-470603968
 prompt_context() {
