@@ -82,12 +82,12 @@ call vundle#begin()
  "call vundle#begin('~/some/path/here')
 
  " let Vundle manage Vundle, required
-Plugin 'Vundle/Vundle.vim'			" Vundle Vim package manager
+Plugin 'VundleVim/Vundle.vim'			" Vundle Vim package manager
 " Plugin 'fatih/vim-go'				" Syntax highlighting for Go
 " Plugin 'nsf/gocode', {'rtp': 'vim/'}		" Autocomplete Daemon for Go
-Plugin 'scrooloose/nerdtree'			" Interactive file finder!
+Plugin 'preservim/nerdtree'			" Interactive file finder!
 " Plugin 'kien/ctrlp'				" Fuzzy file finder
-Plugin 'bling/vim-airline'			" Status and buffer line 
+Plugin 'vim-airline/vim-airline'			" Status and buffer line 
 Plugin 'vim-airline/vim-airline-themes'		" Change airline themes
 " Plugin 'scrooloose/syntastic'			" Syntax checker
 " Plugin 'Chiel92/vim-autoformat'			" autoformatter
