@@ -8,3 +8,4 @@ __pycache__
 *kbscratch*
 .extra_envs
 .venv
+secrets.env

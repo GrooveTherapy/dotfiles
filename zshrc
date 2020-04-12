@@ -1,7 +1,14 @@
 # echo '.zshrc loaded'
 
+# export SOLARIZED_THEME=light
+export SOLARIZED_THEME=dark
+
 # Use root profile for common stuff 
 source ~/.aliases
+
+# disable software flow control
+# https://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
+stty -ixon
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -9,15 +16,15 @@ source ~/.aliases
 # Add wisely, as too many plugins slow down shell startup.
 # TODO: construct plugins list when programs are available in path
 plugins=(
-  # ssh-agent
-  git 
-  docker 
-  docker-compose
-  tmux 
-  npm 
-  go 
-  golang
-  pip 
+	# ssh-agent
+	git 
+	docker 
+	docker-compose
+	tmux 
+	npm 
+	go 
+	golang
+	pip 
 	terraform
 	virtualenvwrapper
 	python
@@ -32,7 +39,6 @@ export ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="robbyrussell"
 
 # make this mod https://github.com/agnoster/agnoster-zsh-theme/issues/39
-# comment out guts of prompt_context to get rid of username@host part
 ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -110,13 +116,14 @@ setopt noincappendhistory
 setopt nosharehistory
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/mc mc
+complete -o nospace -C $(which mc) mc
 
 # override agnoster prompt with this cute thing from https://github.com/agnoster/agnoster-zsh-theme/issues/39#issuecomment-470603968
 prompt_context() {
   # Custom (Random emoji)
-  emojis=("⚡️" "🔥" "💀" "👑" "😎" "🐸" "🐵" "🦄" "🌈" "🍻" "🚀" "💡" "🎉" "🔑" "🇹🇭" "🚦" "🌙" "💻" "💥" "🦴" "💣" "🧲" )
-  RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
-  prompt_segment black default "${emojis[$RAND_EMOJI_N]}"
-  # prompt_segment black default ""
+  # emojis=("⚡️" "🔥" "💀" "👑" "😎" "🐸" "🐵" "🦄" "🌈" "🍻" "🚀" "💡" "🎉" "🔑" "🇹🇭" "🚦" "🌙" "💻" "💥" "🦴" "💣" "🧲" )
+  # RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
+  # prompt_segment $SOLARIZED_THEME default "$USER@$HOST"
+  # prompt_segment $SOLARIZED_THEME default "${emojis[$RAND_EMOJI_N]} $USER@$HOST"
+  prompt_segment black default "$USER@$HOST"
 }

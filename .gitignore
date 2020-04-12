@@ -1,3 +1,9 @@
 *.swp
 vim/bundle/
 vim/.netrwhist
+
+vim/swapfiles/*
+vim/autoload/*
+vim/plugged/*
+vim/spell/*
+!vim/swapfiles.txt
