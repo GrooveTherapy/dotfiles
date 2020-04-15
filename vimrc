@@ -22,6 +22,14 @@ let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
+" BUFFER MANAGEMENT
+set autoread                                    " automatically read buffers that have changed outside Vim
+set hidden                                      " hide buffers instead of unloading
+" Reread buffer when entering
+au FocusGained,BufEnter * :silent! !
+" Auto save buffer when leaving it
+au FocusLost,WinLeave * :silent! noautocmd w
+
 " SYNTAX HIGHLIGHTING
 syntax enable						
 filetype indent on	" Load file type specific indenting rules 
@@ -29,8 +37,8 @@ filetype plugin indent on
 
 " LINE NUMBERS
 set cursorline		" Highlight the row the cursor is one
-" set number		" show absolute line numbers
-set relativenumber	" show line number relative to cursor
+set number		    " show absolute line number under cursor
+set relativenumber	" show line numbers relative to cursor
 
 " MISCELLANEOUS
 set mouse=a				" Enable the mouse
@@ -55,14 +63,17 @@ set spelllang=en_us	" Set spell checking dictionary to English
 set nospell			" Turn off spell checking
 
 " KEY MAPPINGS
-nnoremap <C-L> :bnext!<CR>				" CTRL-H go to previous buffer
-nnoremap <C-H> :bprevious!<CR>			" CTRL-L go to next buffer 
-set backspace=indent,eol,start  		" Modern backspace behaviour
+" CTRL-H go to previous buffer
+nnoremap <C-L> :bnext!<CR>
+" CTRL-L go to next buffer 
+nnoremap <C-H> :bprevious!<CR>
+set backspace=indent,eol,start
 
 " FOLDING
 set foldmethod=indent
 set foldlevel=99
-nnoremap <space> za						" Space bar will open/close folds
+" Space bar will open/close folds
+nnoremap <space> za
 
 " PLUGINS
 " https://github.com/junegunn/vim-plug#usage
@@ -98,25 +109,29 @@ Plug 'junegunn/seoul256.vim'
 
 Plug 'michaeljsmith/vim-indent-object'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+Plug 'junegunn/fzf.vim'
+
 " Some plugins I'd like to try out:
-" Plug 'junegunn/fzf.vim'
 " Plug 'vim-syntastic/syntastic'
 " Plug 'dense-analysis/ale'
 " Plug 'tpope/vim-fugitive'
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'mattn/emmet-vim'
+" Plug 'junegunn/limelight.vim'
 
 call plug#end()
 
 " CONFIGURE PLUGINS
 " vim-airline/vim-airline
-let g:airline_theme='base16_atelierseaside'		" Start airline with this this theme
+let g:airline_theme='base16_eighties'		" Start airline with this this theme
 let g:airline_powerline_fonts=1                 " Use powerline fonts
 let g:airline#extensions#tabline#enabled = 1	" Show open buffers at top
 " abbreviate mode to one letter, remove RHS stuff
 
 " preservim/nerdtree
-nnoremap <C-N> :NERDTreeToggle<CR>		" Toggle NERDTree by Ctrl+n
+" Toggle NERDTree by Ctrl+n
+nnoremap <C-N> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1				" Show hidden files in nerd tree
 
 " COLORS
@@ -127,6 +142,13 @@ set t_Co=256						" Set 256 color mode. Your terminal must support this
 " set background=dark
 " colorscheme lucius
 " LuciusLight
-colorscheme seoul256
-set background=light
+" colorscheme seoul256
+" set background=light
 
+" CUSTOM COMMANDS
+command LightMode :colorscheme lucius | :set background=light
+command DarkMode :colorscheme monokai | :set background=dark
+command ReloadVimrc :source $MYVIMRC
+command NukeIt :%bdelete|:edit .
+
+LightMode        " use darkmode by default
