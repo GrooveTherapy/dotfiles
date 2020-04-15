@@ -134,6 +134,9 @@ let g:airline#extensions#tabline#enabled = 1	" Show open buffers at top
 nnoremap <C-N> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1				" Show hidden files in nerd tree
 
+" YouCompleteMe
+let g:ycm_confirm_extra_conf = 0
+
 " COLORS
 " load colors after plugins if using plugin color instead of ~/.vimrc/colors
 set t_Co=256						" Set 256 color mode. Your terminal must support this
