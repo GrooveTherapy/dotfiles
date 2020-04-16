@@ -38,12 +38,13 @@ filetype plugin indent on
 " LINE NUMBERS
 set cursorline		" Highlight the row the cursor is one
 set number		    " show absolute line number under cursor
-set relativenumber	" show line numbers relative to cursor
+" set relativenumber	" show line numbers relative to cursor
 
 " MISCELLANEOUS
-set mouse=a				" Enable the mouse
-set wildmenu			" In GUI mode, tab will suggest commands for you
-set showmatch 			" Show corresponding end braces
+set mouse=a				        " Enable the mouse
+set wildmenu			        " In GUI mode, tab will suggest commands for you
+set showmatch 			        " Show corresponding end braces
+set backspace=indent,eol,start  " Modern backspacing behaviour
 
 " Fix for delay on <Esc>Shift+o sequence
 " https://github.com/vim/vim/issues/24
@@ -62,18 +63,10 @@ set spelllang=en_us	" Set spell checking dictionary to English
 " set spell			" Turn on spell checking 
 set nospell			" Turn off spell checking
 
-" KEY MAPPINGS
-" CTRL-H go to previous buffer
-nnoremap <C-L> :bnext!<CR>
-" CTRL-L go to next buffer 
-nnoremap <C-H> :bprevious!<CR>
-set backspace=indent,eol,start
 
 " FOLDING
 set foldmethod=indent
 set foldlevel=99
-" Space bar will open/close folds
-nnoremap <space> za
 
 " PLUGINS
 " https://github.com/junegunn/vim-plug#usage
@@ -130,8 +123,6 @@ let g:airline#extensions#tabline#enabled = 1	" Show open buffers at top
 " abbreviate mode to one letter, remove RHS stuff
 
 " preservim/nerdtree
-" Toggle NERDTree by Ctrl+n
-nnoremap <C-N> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1				" Show hidden files in nerd tree
 
 " YouCompleteMe
@@ -155,3 +146,15 @@ command ReloadVimrc :source $MYVIMRC
 command NukeIt :%bdelete|:edit .
 
 LightMode        " use darkmode by default
+
+" KEY MAPPINGS
+" I don't think I know the default commands well enough to know what should be
+" overwritten. Try to learn defaults better and use custom remaps sparingly
+" CTRL-H go to previous buffer
+nnoremap <C-L> :bnext!<CR>
+" CTRL-L go to next buffer 
+nnoremap <C-H> :bprevious!<CR>
+" Open fuzzy finder
+nnoremap <C-P> :FZF<Cr>
+" Toggle NERDTree by Ctrl+n
+nnoremap <C-N> :NERDTreeToggle<CR>

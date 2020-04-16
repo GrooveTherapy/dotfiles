@@ -25,3 +25,4 @@ alias ssh-key-make='ssh-keygen -t rsa -b 2048 -C'
 source ~/dotfiles/cmds/env-cd
 
 alias ctop='docker run --rm -ti -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'
+alias tvim='gnome-terminal --command="vim ." .'
