@@ -144,7 +144,9 @@ command LightMode :colorscheme lucius | :set background=light
 command DarkMode :colorscheme monokai | :set background=dark
 command ReloadVimrc :source $MYVIMRC
 command NukeIt :%bdelete|:edit .
-
+" TODO: make color mode contingent on time. LightMode during day, DarkMode
+" during night
+" https://stackoverflow.com/questions/3368748/conditional-colorscheme-in-vimrc
 LightMode        " use darkmode by default
 
 " KEY MAPPINGS
