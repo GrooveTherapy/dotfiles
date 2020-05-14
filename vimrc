@@ -114,10 +114,12 @@ nnoremap <C-P> :FZF<Cr>
 
 Plug 'dense-analysis/ale'
 Plug 'vim-test/vim-test'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
 
-" deoplete
+" LSP
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
+
+" deoplete for autocompletion
 " needs: pip3 install --user pynvim
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -125,8 +127,16 @@ else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'deoplete-plugins/deoplete-jedi'
 endif
 let g:deoplete#enable_at_startup = 1
+" TAB autocompletion https://github.com/Shougo/deoplete.nvim/issues/816
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
+" show docstring in preview window
+let g:deoplete#sources#jedi#show_docstring = 1
+" close the preview window after autocomplete is finished
+autocmd CompleteDone * pclose!
 
 " Some plugins I'd like to try out:
 " Plug 'tpope/vim-fugitive'
