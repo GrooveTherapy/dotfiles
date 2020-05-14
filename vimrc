@@ -112,6 +112,33 @@ Plug 'junegunn/fzf.vim'
 " HOTKEY: Open fuzzy finder with <C-P>
 nnoremap <C-P> :FZF<Cr>
 
+" grep style searching
+" https://github.com/dyng/ctrlsf.vim
+Plug 'dyng/ctrlsf.vim' 
+" trying their recommended mappings
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+" Commands In CtrlSF window:
+    " Enter, o, double-click - Open corresponding file of current line in the window which CtrlSF is launched from.
+    " <C-O> - Like Enter but open file in a horizontal split window.
+    " t - Like Enter but open file in a new tab.
+    " p - Like Enter but open file in a preview window.
+    " P - Like Enter but open file in a preview window and switch focus to it.
+    " O - Like Enter but always leave CtrlSF window opening.
+    " T - Like t but focus CtrlSF window instead of new opened tab.
+    " M - Switch result window between normal view and compact view.
+    " q - Quit CtrlSF window.
+    " <C-J> - Move cursor to next match.
+    " <C-K> - Move cursor to previous match.
+    " <C-C> - Stop a background searching process.
+
+
 Plug 'dense-analysis/ale'
 Plug 'vim-test/vim-test'
 
