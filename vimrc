@@ -78,10 +78,17 @@ Plug 'sheerun/vim-polyglot'
 
 " Interactive file finder
 Plug 'preservim/nerdtree'
+let NERDTreeShowHidden=1				" Show hidden files in nerd tree
+" Toggle NERDTree by Ctrl+n
+nnoremap <C-N> :NERDTreeToggle<CR>
 
 " Status and buffer line 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='base16_eighties'		" Start airline with this this theme
+let g:airline_powerline_fonts=1                 " Use powerline fonts
+let g:airline#extensions#tabline#enabled = 1	" Show open buffers at top
+" abbreviate mode to one letter, remove RHS stuff
 
 " nouns and motions to modify surroundings
 Plug 'tpope/vim-surround'
@@ -94,39 +101,41 @@ Plug 'yggdroot/indentline'
 
 Plug 'tpope/vim-commentary'
 
-Plug 'ycm-core/YouCompleteMe'
-
 Plug 'airblade/vim-gitgutter'
-
-Plug 'junegunn/seoul256.vim'
 
 Plug 'michaeljsmith/vim-indent-object'
 
+" Fuzzy File Finding
+" requires fzf: https://github.com/junegunn/fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
+" HOTKEY: Open fuzzy finder with <C-P>
+nnoremap <C-P> :FZF<Cr>
+
+Plug 'dense-analysis/ale'
+Plug 'vim-test/vim-test'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+
+" deoplete
+" needs: pip3 install --user pynvim
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 " Some plugins I'd like to try out:
-" Plug 'vim-syntastic/syntastic'
-" Plug 'dense-analysis/ale'
 " Plug 'tpope/vim-fugitive'
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'mattn/emmet-vim'
 " Plug 'junegunn/limelight.vim'
+" Plug 'SirVer/ultisnips'
 
 call plug#end()
-
-" CONFIGURE PLUGINS
-" vim-airline/vim-airline
-let g:airline_theme='base16_eighties'		" Start airline with this this theme
-let g:airline_powerline_fonts=1                 " Use powerline fonts
-let g:airline#extensions#tabline#enabled = 1	" Show open buffers at top
-" abbreviate mode to one letter, remove RHS stuff
-
-" preservim/nerdtree
-let NERDTreeShowHidden=1				" Show hidden files in nerd tree
-
-" YouCompleteMe
-let g:ycm_confirm_extra_conf = 0
 
 " COLORS
 " load colors after plugins if using plugin color instead of ~/.vimrc/colors
@@ -156,7 +165,3 @@ LightMode        " use darkmode by default
 nnoremap <C-L> :bnext!<CR>
 " CTRL-L go to next buffer 
 nnoremap <C-H> :bprevious!<CR>
-" Open fuzzy finder
-nnoremap <C-P> :FZF<Cr>
-" Toggle NERDTree by Ctrl+n
-nnoremap <C-N> :NERDTreeToggle<CR>
