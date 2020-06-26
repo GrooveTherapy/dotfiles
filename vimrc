@@ -54,6 +54,8 @@ set timeout timeoutlen=5000 ttimeoutlen=100
 set ic				" Ignore case when searching by default
 set hlsearch		" Highlight search matches
 set incsearch		" Search as characters are entered
+" // in Visual mode will search for visually selected text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>'")
 
 " SPELLING
 " z= gives suggestions on misspelling
@@ -140,11 +142,17 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 
 Plug 'dense-analysis/ale'
+let g:ale_linters = {'python': ['flake8', 'pydocstyle']}
+let g:ale_linters_explicit = 1
+
 Plug 'vim-test/vim-test'
+let test#strategy = "vimterminal"
 
 " LSP
-" Plug 'prabirshrestha/async.vim'
-" Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/vim-lsp-settings'
+let g:lsp_diagnostics_enabled = 0
 
 " deoplete for autocompletion
 " needs: pip3 install --user pynvim
@@ -193,7 +201,11 @@ command NukeIt :%bdelete|:edit .
 " TODO: make color mode contingent on time. LightMode during day, DarkMode
 " during night
 " https://stackoverflow.com/questions/3368748/conditional-colorscheme-in-vimrc
-LightMode        " use darkmode by default
+LightMode        " use lightmode by default
+" DarkMode         " use darkmode by default
+" Close all other buffers but current one
+" https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one
+command CloseOthers :%bd|e#
 
 " KEY MAPPINGS
 " I don't think I know the default commands well enough to know what should be

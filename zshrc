@@ -16,17 +16,18 @@ stty -ixon
 # Add wisely, as too many plugins slow down shell startup.
 # TODO: construct plugins list when programs are available in path
 plugins=(
-	# ssh-agent
+	ssh-agent
 	git 
 	docker 
 	docker-compose
 	tmux 
 	npm 
 	golang
-	pip 
 	terraform
-	virtualenvwrapper
 	python
+	pip 
+    # this will activate venv environments on cd
+    virtualenvwrapper
 )
 
 # Path to your oh-my-zsh installation.
