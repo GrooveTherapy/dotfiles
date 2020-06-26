@@ -22,7 +22,6 @@ plugins=(
 	docker-compose
 	tmux 
 	npm 
-	go 
 	golang
 	pip 
 	terraform
