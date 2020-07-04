@@ -5,35 +5,10 @@
 # What this does:
 # - include .extra_envs file in directory, those environment variables will be set
 # - unset these variables when you move away from that dir
-
-# What I'd like this to do:
-# - TODO: evaluate second parameter like an expression for pwd
-# - BUG: for some reason, we need whitespace at end of .extra_envs for the parsing to work properly. fix this
-
-function join_by { local IFS="$1"; shift; echo "$*"; }
+# - automatically activate/deactivate .venv
+# - evaluate second parameter like an expression for pwd
 
 cd() {
     builtin cd "$@"
-	if [[ -n $UNSET_ON_EXIT ]]; then
-		echo Unset $UNSET_ON_EXIT from .extra_envs
-		unset $(echo $UNSET_ON_EXIT UNSET_ON_EXIT)
-	fi
-    if [[ -e `pwd`/.extra_envs ]]; then
-		# all fields we are setting
-		SET_FIELDS=()
-		# inspect each line of extra_envs
-		\cat "`pwd`"/.extra_envs | while read LINE
-		do
-			# ignore lines starting with #
-			if [[ $LINE = \#* ]]; then
-				continue
-			fi
-			# delimit = and set env
-			FIELD_NAME=$(echo $LINE | cut -d'=' -f1)
-			export $FIELD_NAME=$(echo $LINE | cut -d'=' -f2)
-			SET_FIELDS+=($FIELD_NAME)
-		done
-		export UNSET_ON_EXIT=$(echo $(join_by \  $SET_FIELDS))
-		echo Set $SET_FIELDS from .extra_envs
-    fi
+    eval `env-cd.py`
 }

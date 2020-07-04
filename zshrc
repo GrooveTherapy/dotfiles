@@ -26,8 +26,7 @@ plugins=(
 	terraform
 	python
 	pip 
-    # this will activate venv environments on cd
-    virtualenvwrapper
+    pyenv
 )
 
 # Path to your oh-my-zsh installation.
